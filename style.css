@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.mask-custom {
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, .15);
+  }
+
+  .navbar-brand {
+    font-size: 2rem;
+    letter-spacing: 3px;
+  }
+
+  .nav-link {
+    font-size: 1.5rem;
+  }
