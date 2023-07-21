@@ -9,10 +9,15 @@ body {
   }
 
   .navbar-brand {
-    font-size: 2rem;
+    font-size: 3rem;
     letter-spacing: 3px;
   }
 
   .nav-link {
     font-size: 1.5rem;
+  }
+
+  #myCarousel {
+    height: 100%;
+    width: 100%;
   }
