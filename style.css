@@ -1,6 +1,8 @@
-body {
+html, body {
     margin: 0;
     padding: 0;
+    height: 100%;
+    width: 100%;
 }
 
 .mask-custom {
@@ -21,3 +23,14 @@ body {
     height: 100%;
     width: 100%;
   }
+
+  #summary-container {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  #summary-container p {
+    font-size: 1.5rem;
+  }
+
+ 
