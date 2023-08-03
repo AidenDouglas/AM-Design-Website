@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $servername = "localhost"; 
 $username = "root";
 $password = ""; 
@@ -21,8 +23,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->bind_param("s", $email);
 
     if ($stmt->execute()) {
-        echo "Email saved successfully!";
+        $_SESSION['message'] = "Email saved successfully!";
+        http_response_code(200); // Success HTTP status code
+        echo json_encode(['message' => 'Email saved successfully!']);
     } else {
-        echo "Error saving email: " . $conn->error;
+        $_SESSION['message'] = "Error saving email: " . $conn->error;
+        http_response_code(500); // Error HTTP status code
+        echo json_encode(['message' => 'Error saving email: ' . $conn->error]);
     }
+
+    // Add this for debugging
+    die();
 }
+?>
