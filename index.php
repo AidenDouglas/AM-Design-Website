@@ -18,6 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Get the email address from the form
     $email = $_POST["email"];
 
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        http_response_code(400); // Bad request HTTP status code
+        echo json_encode(['message' => 'Invalid email']);
+        die();
+    }
+
     // Prepare and execute the SQL query to insert the email into the database
     $stmt = $conn->prepare("INSERT INTO emails (email) VALUES (?)");
     $stmt->bind_param("s", $email);

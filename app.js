@@ -2,10 +2,14 @@ function showMessage(message) {
     alert(message);
   }
   
-  document.getElementById("subscribe-button").addEventListener("click", function () {
-    const email = document.getElementById("email").value;
-    const formData = new FormData();
-    formData.append("email", email);
+  document.getElementById("subscribe-form").addEventListener("submit", function (event) {
+    event.preventDefault();
+    const form = this;
+    if (!form.checkValidity()) {
+      return;
+    }
+
+    const formData = new FormData(form);
   
     fetch("index.php", {
       method: "POST",

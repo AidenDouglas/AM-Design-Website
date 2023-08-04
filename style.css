@@ -11,8 +11,12 @@ html, body {
   }
 
   .navbar-brand {
-    font-size: 3rem;
+    font-size: 2.0rem;
     letter-spacing: 3px;
+  }
+
+  #navbar-brand-pop {
+    color: #5e9693;
   }
 
   .nav-link {
@@ -31,6 +35,10 @@ html, body {
 
   #summary-container p {
     font-size: 1.5rem;
+  }
+
+  #subscribe-button {
+    background-color:#5e9693;
   }
 
  
